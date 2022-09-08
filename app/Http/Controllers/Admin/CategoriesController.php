@@ -43,9 +43,14 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $category = new category();
-        $category = category::create($request->all());
+        // $category = category::create($request->all());
+        $category->name = $request->post("name");
+        $category->description = $request->post("description");
+        $category->parent_id = $request->post("parent_id");
 
-        
+        $category->save();
+
+        return redirect('admin/categories');
         
     }
 

@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/admin/categories',[CategoriesController::class , 'index']);
 Route::get('/admin/categories/create',[CategoriesController::class , 'create']);
-Route::post('/admin/categories/store',[CategoriesController::class , 'store']);
+Route::post('/admin/categories',[CategoriesController::class , 'store']);
 Route::get('/admin/categories/show/{id}',[CategoriesController::class , 'show']);
 Route::get('/admin/categories/show/{id}/edit',[CategoriesController::class , 'edit']);
 Route::get('/admin/categories/destroy/{id}',[CategoriesController::class , 'destroy']);

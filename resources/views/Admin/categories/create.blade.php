@@ -10,8 +10,9 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Create New Category</h2>
-        <form action="/admin/categories" method="POST">
+        <form action="/admin/categories" method="post">
           <?= csrf_field() ?>
+          <!-- <input type="hidden" name="_method" value="post"> -->
             <div class="form-group">
               <label for="exampleInputEmail1">Category Name</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name="name">
@@ -23,14 +24,14 @@
             <div class="form-group mt-2">
               <label for="exampleInputParent">Category Parent</label>
               <br>
-                <select id="exampleInputParent" class="form-control mt-1">
+                <select id="exampleInputParent" class="form-control mt-1" name="parent_id">
                     <option value="">No Parent</option>
                     <?php foreach ($categories as $category){ ?>
-                        <option name="<?= $category -> id ?>" value="<?= $category -> id ?>"><?= $category->name ?></option>
+                        <option name="<?= $category ->name ?>" value="<?= $category -> id ?>"><?= $category->name ?></option>
                         <?php } ?>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            <button type="submit"  class="btn btn-primary mt-2">Submit</button>
           </form>
     </div>
 </body>
