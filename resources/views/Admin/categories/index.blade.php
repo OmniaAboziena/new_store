@@ -18,12 +18,13 @@
                 <th scope="col">Description</th>
                 <th scope="col">Parent_ID</th>
                 <th scope="col">Created_at</th>
-                <th scope="col">Updated_at</th>
+                <th scope="col">Updated_at</th>\
+                <th></th>
               </tr>
             </thead>
             <tbody>
               <?php foreach ($categories as $category) {
-                # code...
+              
                ?>
                 <td><?= $category -> id ?></td>
                 <td><?= $category -> name ?></td>
@@ -31,8 +32,7 @@
                 <td><?= $category -> parent_id ?></td>
                 <td><?= $category -> created_at ?></td>
                 <td><?= $category -> updated_at ?></td>
-                {{-- <td>Otto</td>
-                <td>@mdo</td> --}}
+                <td><a href="/admin/categories/<?= $category -> id ?>/edit" class="btn btn-dark btn-sm">Edit</a></td>
               </tr>
              <?php } ?>
             </tbody>

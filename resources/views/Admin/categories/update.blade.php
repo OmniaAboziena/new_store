@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Create New Category</h2>
+        <h2 class="text-center">Update Category</h2>
         <form action="/admin/categories" method="post">
           <input type="hidden" name="_token" value="<?= csrf_token() ?>">
           <!-- <input type="hidden" name="_method" value="post"> -->
@@ -31,7 +31,7 @@
                         <?php  }  ?>
                 </select>
             </div>
-            <button type="submit"  class="btn btn-primary mt-2">Save</button>
+            <button type="Update"  class="btn btn-primary mt-2">Save</button>
           </form>
     </div>
 </body>

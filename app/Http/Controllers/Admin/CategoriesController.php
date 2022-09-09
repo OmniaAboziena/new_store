@@ -43,12 +43,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $category = new category();
-        // $category = category::create($request->all());
-        $category->name = $request->post("name");
-        $category->description = $request->post("description");
-        $category->parent_id = $request->post("parent_id");
+        $category = category::create($request->all());
+        // $category->name = $request->name;
+        // $category->description = $request->description;
+        // $category->parent_id = $request->parent_id;
 
-        $category->save();
+        // $category->save();
 
         return redirect('admin/categories');
         
@@ -63,9 +63,9 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $category = category::find($id);
-        if(!$category){
-            abort(404);
-        }
+        // if(!$category){
+        //     abort(404);
+        // }
         dd($category);
     }
 
@@ -77,9 +77,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = category::find($id);
-        $category->name = 'Category - updated';
-        $category -> save();
+        return (view("Admin.categories.update" , [
+            "categories" => Category::all()
+        ]));
     }
 
     /**
@@ -91,7 +91,10 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $category = category::find($id);
+        
+        return dd($category);
     }
 
     /**

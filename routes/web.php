@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('/admin/categories',[CategoriesController::class , 'index']);
 Route::get('/admin/categories/create',[CategoriesController::class , 'create']);
 Route::post('/admin/categories',[CategoriesController::class , 'store']);
-Route::get('/admin/categories/show/{id}',[CategoriesController::class , 'show']);
-Route::get('/admin/categories/show/{id}/edit',[CategoriesController::class , 'edit']);
+Route::get('/admin/categories/{id}',[CategoriesController::class , 'show']);
+Route::get('/admin/categories/{id}/edit',[CategoriesController::class , 'edit']);
+Route::put('/admin/categories/{id}',[CategoriesController::class , 'update']);
 Route::get('/admin/categories/destroy/{id}',[CategoriesController::class , 'destroy']);
