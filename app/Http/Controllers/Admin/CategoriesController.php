@@ -44,11 +44,7 @@ class CategoriesController extends Controller
     {
         $category = new category();
         $category = category::create($request->all());
-        // $category->name = $request->name;
-        // $category->description = $request->description;
-        // $category->parent_id = $request->parent_id;
-
-        // $category->save();
+    
 
         return redirect('admin/categories');
         
@@ -77,8 +73,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
+        $category = category::FindOrFail($id);
         return (view("Admin.categories.update" , [
-            "categories" => Category::all()
+            "categories" => Category::all(),
+            "category" => $category
         ]));
     }
 
@@ -92,9 +90,10 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         
-        $category = category::find($id);
+        $category = category::FindOrFail($id);
+        $category->update($request->all());
         
-        return dd($category);
+        return redirect('admin/categories');
     }
 
     /**
