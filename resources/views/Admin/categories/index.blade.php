@@ -32,7 +32,7 @@
                 <td><?= $category -> parent_id ?></td>
                 <td><?= $category -> created_at ?></td>
                 <td><?= $category -> updated_at ?></td>
-                <td><a href="/admin/categories/<?= $category -> id ?>/edit" class="btn btn-dark btn-sm">Edit</a></td>
+                <td><a href="/admin/categories/{{ $category -> id }}/edit" class="btn btn-dark btn-sm">Edit</a></td>
               </tr>
              <?php } ?>
             </tbody>

@@ -10,10 +10,10 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Update Category</h2>
-        <form action="/admin/categories" method="POST">
+        <form action="/admin/categories/{{$category->id}}" method="POST">
           <input type="hidden" name="_token" value="<?= csrf_token() ?>">
-           {{-- <input type="hidden" name="_method" value="put">  --}}
-           {{ method_field('PUT') }}
+            <input type="hidden" name="_method" value="put">  
+           <!-- {{ method_field('PUT') }} -->
             <div class="form-group">
               <label for="exampleInputEmail1">Category Name</label>
               <input type="text" value="<?= $category->name ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name="name">
